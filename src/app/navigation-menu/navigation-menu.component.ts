@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core'
   selector: 'app-navigation-menu',
   styles: [
     `
-    .active-link {
-      font-weight: bold;
-      border-left: 3px solid green;
-    }
-  `,
+      .active-link {
+        font-weight: bold;
+        border-left: 3px solid green;
+      }
+    `,
   ],
   template: `
     <mat-nav-list>

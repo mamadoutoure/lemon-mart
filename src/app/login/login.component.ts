@@ -11,12 +11,14 @@ import { UiService } from '../common/ui.service'
   templateUrl: 'login.component.html',
   styles: [
     `
-    .error {
-        color: red
-    }
+      .error {
+        color: red;
+      }
     `,
     `
-    div[fxLayout] {margin-top: 32px;}
+      div[fxLayout] {
+        margin-top: 32px;
+      }
     `,
   ],
 })

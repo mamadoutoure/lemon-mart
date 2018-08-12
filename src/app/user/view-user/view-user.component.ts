@@ -24,10 +24,10 @@ import { ActivatedRoute } from '@angular/router'
   `,
   styles: [
     `
-    .bold {
-      font-weight: bold
-    }
-  `,
+      .bold {
+        font-weight: bold;
+      }
+    `,
   ],
 })
 export class ViewUserComponent implements OnInit {
