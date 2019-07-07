@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { sign } from 'fake-jwt-sign' // For fakeAuthProvider only
 import * as decode from 'jwt-decode'
-import { BehaviorSubject, Observable, of, throwError as observableThrowError } from 'rxjs'
+import { BehaviorSubject, Observable, throwError as observableThrowError, of } from 'rxjs'
 import { catchError, map } from 'rxjs/operators'
+
 import { environment } from '../../environments/environment'
 import { transformError } from '../common/common'
 import { CacheService } from './cache.service'
@@ -99,10 +100,10 @@ export class AuthService extends CacheService implements IAuthService {
       userRole: email.toLowerCase().includes('cashier')
         ? Role.Cashier
         : email.toLowerCase().includes('clerk')
-          ? Role.Clerk
-          : email.toLowerCase().includes('manager')
-            ? Role.Manager
-            : Role.None,
+        ? Role.Clerk
+        : email.toLowerCase().includes('manager')
+        ? Role.Manager
+        : Role.None,
     } as IAuthStatus
 
     const authResponse = {

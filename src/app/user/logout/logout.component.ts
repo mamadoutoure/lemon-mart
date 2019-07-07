@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+
 import { AuthService } from '../../auth/auth.service'
 
 @Component({
   selector: 'app-logout',
   template: `
-    <p>
-      Logging out...
-    </p>
+    <p>Logging out...</p>
   `,
   styles: [],
 })

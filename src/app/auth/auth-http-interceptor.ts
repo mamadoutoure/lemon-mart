@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 import { Observable, throwError as observableThrowError } from 'rxjs'
 import { catchError } from 'rxjs/operators'
+
 import { AuthService } from './auth.service'
 
 @Injectable()
@@ -19,7 +20,7 @@ export class AuthHttpInterceptor implements HttpInterceptor {
     return next.handle(authRequest).pipe(
       catchError((err, caught) => {
         if (err.status === 401) {
-          this.router.navigate(['/user/login'], {
+          this.router.navigate(['/login'], {
             queryParams: { redirectUrl: this.router.routerState.snapshot.url },
           })
         }

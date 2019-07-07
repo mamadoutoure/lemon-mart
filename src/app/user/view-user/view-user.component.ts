@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core'
-import { IUser, User } from '../user/user'
+import { Component, Input, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
+
+import { IUser, User } from '../user/user'
 
 @Component({
   selector: 'app-view-user',
@@ -8,14 +9,14 @@ import { ActivatedRoute } from '@angular/router'
     <mat-card>
       <mat-card-header>
         <div mat-card-avatar><mat-icon>account_circle</mat-icon></div>
-        <mat-card-title>{{currentUser.fullName}}</mat-card-title>
-        <mat-card-subtitle>{{currentUser.role}}</mat-card-subtitle>
+        <mat-card-title>{{ currentUser.fullName }}</mat-card-title>
+        <mat-card-subtitle>{{ currentUser.role }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p><span class="mat-input bold">E-mail</span></p>
-        <p>{{currentUser.email}}</p>
+        <p>{{ currentUser.email }}</p>
         <p><span class="mat-input bold">Date of Birth</span></p>
-        <p>{{currentUser.dateOfBirth | date:'mediumDate'}}</p>
+        <p>{{ currentUser.dateOfBirth | date: 'mediumDate' }}</p>
       </mat-card-content>
       <mat-card-actions *ngIf="editMode">
         <button mat-button mat-raised-button>Edit</button>
@@ -24,10 +25,10 @@ import { ActivatedRoute } from '@angular/router'
   `,
   styles: [
     `
-    .bold {
-      font-weight: bold
-    }
-  `,
+      .bold {
+        font-weight: bold;
+      }
+    `,
   ],
 })
 export class ViewUserComponent implements OnInit {
